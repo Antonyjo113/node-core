@@ -54,12 +54,12 @@
 //   module.exports = routers;
 
 
-const { getUsers, postAuthenticate } = require("../../controller/user/app");
+const { getUsers, postUser } = require("../../controller/user/app");
 
 const routers = ({ router, makeExpressCallback, validateAuth }) => {
   // Ensure these routes are defined correctly:
   router.get("/", validateAuth, makeExpressCallback(getUsers));
-//   router.post("/authenticate", validateAuth, makeExpressCallback(postAuthenticate));
+  router.post("/", validateAuth, makeExpressCallback(postUser));
 
   return router;
 };

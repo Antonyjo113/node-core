@@ -6,6 +6,7 @@ const query = ({ connects, models, Op, _ }) => {
     return Object.freeze({
         userLogin,
         getAllUserData,
+        addUser,
     });
 
     async function userLogin() {
@@ -33,6 +34,14 @@ const query = ({ connects, models, Op, _ }) => {
             });
           }
     }
+    async function addUser(data) {
+      try {
+      const res = await models.User.create(data);
+      return res;
+      } catch (e) {
+      console.log("Error: ", e);
+      }
+  }
 };
 
 module.exports = query;

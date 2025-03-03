@@ -1,10 +1,10 @@
 const { encrypt, decrypt } = require("../../functions/app");
 
-const buildMakeAuthenticate = require("./make-user-authenticate");
+const buildMakeAddUserField = require("./make-user");
 
-const makeAuthenticate = buildMakeAuthenticate({ encrypt });
+const makeAddUserField = buildMakeAddUserField({ encrypt });
 
-const UserEntityServices = Object.freeze({ makeAuthenticate });
+const UserEntityServices = Object.freeze({ makeAddUserField });
 
 module.exports = UserEntityServices;
-module.exports = { makeAuthenticate };
+module.exports = { makeAddUserField };

@@ -89,7 +89,7 @@ const makeExpressCallback = (controllerFunction) => {
         query: req.query,
         params: req.params,
         headers: req.headers,
-        // ip: req.ip,
+        ip: req.ip,
       });
 
       res.status(response.statusCode).json(response.body);

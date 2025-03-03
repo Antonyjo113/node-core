@@ -28,18 +28,18 @@
 //   };
 
 
-const { makeAuthenticate } = require("../../entities/user/app");
+const { makeAddUserField } = require("../../entities/user/app");
 const UserDb = require("../../data-access/user/app");
 // const { encrypt, decrypt } = require("../../functions/app");
 
-const makeAddAuthenticate = require("./add-authenticate");
+const makeAddUserData = require("./add-user");
 const makeGetAllUserData = require("./get-alluser");
 
-const addAuthenticate = makeAddAuthenticate({ UserDb, makeAuthenticate });
+const makeUserData = makeAddUserData({ UserDb, makeAddUserField });
 const makeAllUserData = makeGetAllUserData({ UserDb });
 
 const UsersServices = Object.freeze({
-  addAuthenticate, 
+  makeUserData, 
   makeAllUserData
 });
 

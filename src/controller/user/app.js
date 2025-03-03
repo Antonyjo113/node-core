@@ -16,16 +16,16 @@
 // module.exports = { postAuthenticate, postGetAllUser };
 
 
-const { addAuthenticate, makeAllUserData } = require("../../use-cases/user/app");
+const { makeUserData, makeAllUserData } = require("../../use-cases/user/app");
 
-const makePostAuthenticate = require("./post-authenticate");
+const makePostUser = require("./post-user");
 const makeGetAllUsers = require("./get-allusers");
 
-const postAuthenticate = makePostAuthenticate({ addAuthenticate });
+const postUser = makePostUser({ makeUserData });
 const getUsers = makeGetAllUsers({ makeAllUserData });
 
 const UserStatusController = Object.freeze({
-  postAuthenticate, 
+  postUser, 
   getUsers
 });
 

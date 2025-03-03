@@ -1,23 +1,23 @@
 const buildMakeAuthenticate = ({ encrypt }) => {
     return function makeAuthenticate({
-      username,
-      password,
+      name,
+      email,
       createdAt = Date.now(),
-      updatedAt = Date.now()    
+      updatedAt = Date.now()
       } = {}) {
       
   
-      // if (!username) {
-      //   throw new Error('Email Id is required')
-      // }
+      if (!name) {
+        throw new Error('Email Id is required')
+      }
   
-      // if (!password) {
-      //   throw new Error('Password is required')
-      // }
+      if (!email) {
+        throw new Error('Password is required')
+      }
   
       return Object.freeze({
-          getUsername: () => username,      
-          getPassword: () => password,
+          getName: () => name,      
+          getEmail: () => email,
           getCreatedAt: () => createdAt,       
           getUpdatedAt: () => updatedAt
       });

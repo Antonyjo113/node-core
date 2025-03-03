@@ -34,8 +34,6 @@ const { validateAuth } = require("../../middlewares/app");
 // Create the routes using the user route logic
 const userRoute = UserRoutes({ router, makeExpressCallback, validateAuth });
 
-
-console.log('userRoute', userRoute);
 // Export the router correctly
 module.exports = userRoute;  // Export the final router here
 
